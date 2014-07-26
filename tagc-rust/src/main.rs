@@ -1,3 +1,5 @@
+extern crate debug;
+
 mod tokenizer;
 
 fn main() {
@@ -5,9 +7,7 @@ fn main() {
     use std::io::fs::File;
     let ref filename = std::os::args()[1];
     println!("COMPILING {}", filename);
-    let file = File::open(&Path::new(filename.as_slice()));
-    let mut reader = BufferedReader::new(file);
-    for (lnum, line) in reader.lines().enumerate() {
-        print!("{} {}", lnum, line.unwrap());
-    }
+    let mut file = File::open(&Path::new(filename.as_slice()));
+    let string = file.read_to_string();
+    println!("{:?}", tokenizer::tokenize(string.unwrap().as_slice()));
 }
