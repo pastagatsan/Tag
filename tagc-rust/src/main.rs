@@ -1,3 +1,6 @@
+mod tokenizer;
+
 fn main() {
-    println!("Hello tagc world!")
+    let ref filename = std::os::args()[1];
+    println!("COMPILING {}", filename);
 }
