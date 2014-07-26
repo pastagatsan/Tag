@@ -1,0 +1,5 @@
+[package]
+
+name = "tagc-rust"
+version = "0.0.0"
+authors = ["HurrDurr"]
