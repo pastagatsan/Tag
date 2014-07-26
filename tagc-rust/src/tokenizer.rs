@@ -1,3 +1,4 @@
+#[deriving(Show)]
 struct Token {
     wot: String
 }

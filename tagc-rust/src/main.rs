@@ -1,5 +1,3 @@
-extern crate debug;
-
 mod tokenizer;
 
 fn main() {
@@ -9,5 +7,5 @@ fn main() {
     println!("COMPILING {}", filename);
     let mut file = File::open(&Path::new(filename.as_slice()));
     let string = file.read_to_string();
-    println!("{:?}", tokenizer::tokenize(string.unwrap().as_slice()));
+    println!("{}", tokenizer::tokenize(string.unwrap().as_slice()));
 }
